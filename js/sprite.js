@@ -64,6 +64,15 @@ class Bibi extends Sprite{
     constructor(...params){
         super(...params);
         this.walking = false;
+        this.fowarding = false;
+    }
+
+    halfWidth() {
+        return 25;
+    }
+
+    centerX() {
+        return this.fowarding ? this.x+this.halfWidth()+35 : this.x+this.halfWidth();
     }
 
     walk(){

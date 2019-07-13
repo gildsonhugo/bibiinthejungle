@@ -295,7 +295,7 @@ class Game {
             });
 
             this.grounds.forEach((g, i) => {
-                if (collide(this.bibi, g) && this.bibi.vy >= 0) {
+                if (collide(this.bibi, g) && this.bibi.vy >= 0 && this.bibi.y-this.bibi.vy <= g.y-this.bibi.height) {
                     this.bibi.vy = 0;
                     this.bibi.y = g.y - this.bibi.height;
                     this.bibi.jumpsAllowed = 2;
@@ -389,6 +389,7 @@ class Game {
                 switch (e.which) {
                     case 39:
                         this.foward = true;
+                        this.bibi.fowarding = true;
                         this.direction = 'foward';
                         // this.bibi.walk();
                         // this.moveArena();
@@ -403,6 +404,7 @@ class Game {
                         break;
                     case 37:
                         this.backing = true;
+                        this.bibi.fowarding = false;
                         this.direction = 'back';
                         // this.bibi.walk();
                         // this.moveArena();
