@@ -1,0 +1,215 @@
+/* CSS RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 4px 0 0 #000, -4px 0 0 #000, 0 4px 0 #000, 0 -4px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.startBlock{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    max-height: 50%;
+    animation: animateFront .5s;
+    animation-fill-mode: forwards;
+}
+
+
+#overBlock{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    max-height: 62%;
+    animation: animateFront .5s;
+    animation-fill-mode: forwards;
+}
+
+#overBlock img{
+    max-height: 45vh;
+}
+
+#results{
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+}
+
+#results > * + *{
+    margin-left: 10px;
+}
+
+
+.startBlock.back{
+    animation: animateFrontBack .5s;
+    animation-fill-mode: forwards;
+}
+
+#startButton{
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: transparent;
+    width: 206px;
+    height: 81px;
+    transition: all 300ms;
+    background: url('../img/btn-start.png') no-repeat;
+}
+
+#startButton:active{
+    transform: scale(0.8);
+}
+
+#restartButton{
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: transparent;
+    width: 309px;
+    height: 81px;
+    transition: all 300ms;
+    background: url('../img/restart.png') no-repeat;
+}
+
+
+/* BLOCK MAIN */
+
+#blockApp {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: skyblue;
+    background: url('../img/background.png') repeat-x;
+    background-size: cover;
+    /*background-size: cover;*/
+    /*background-position: 0px centerpx;*/
+    /*animation: animateBg linear infinite;*/
+    /*animation-duration: 150s;*/
+}
+
+#mainCanvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}
+
+#indBurgers{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    top: 10px;
+    left: 10px;
+}
+
+#indBurgers div {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#indBurgers div h3{
+    margin-left: 10px;
+}
+
+#indBurgers div img{
+    width: 30px;
+}
+
+
+#ground {
+    position: absolute;
+    height: 127px;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    background-size: cover;
+    background: url('../img/ground.png') repeat-x;
+    animation: animateGround linear infinite;
+    animation-duration: 2s;
+    animation-play-state: paused;
+}
+
+#trees{
+    position: absolute;
+    height: 181px;
+    width: 100%;
+    bottom: 107px;
+    z-index: 0;
+    background: url('../img/trees.png') repeat-x;
+}
+
+
+/*#ground.animate{*/
+/*animation-play-state: running;*/
+/*}*/
+
+/*#ground.back{*/
+/*animation-play-state: running;*/
+/*animation-direction: reverse;*/
+/*}*/
+
+/*#ground.animate.faster{*/
+/*animation-duration: 0.5s;*/
+/*}*/
+
+/*@keyframes animateGround {*/
+/*from{*/
+/*background-position: 0px 0px;*/
+/*}*/
+/*to{*/
+/*background-position: -553px 0px;*/
+/*}*/
+/*}*/
+
+@keyframes animateBg {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: -1920px 0px;
+    }
+}
+
+@keyframes animateFrontBack {
+    0%{
+        transform: scale(1);
+    }
+    35%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+@keyframes animateFront {
+    0%{
+        transform: scale(0);
+    }
+    65%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

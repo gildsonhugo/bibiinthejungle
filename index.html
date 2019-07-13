@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bibi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="blockApp">
+
+        <div class="startBlock">
+            <img src="img/start-image.svg" alt="img">
+            <button id="startButton" onclick="game.init();"></button>
+        </div>
+
+        <div id="overBlock" style="display: none;">
+            <img src="img/gameover.svg" alt="img">
+            <div id="results">
+                <img src="img/burger.png" alt="img-burger">
+                <h3> <span id="nburgerResults">0</span>x</h3>
+                <img src="img/combo.png" alt="img-burger">
+                <h3> <span id="ncombosResults">0</span>x</h3>
+            </div>
+            <button id="restartButton" onclick="window.location.reload();"></button>
+        </div>
+
+        <div id="indBurgers">
+            <h3>BIBI</h3>
+            <div>
+                <img src="img/burger.png" alt="img-burger">
+                <h3> <span id="nburger">0</span>x</h3>
+            </div>
+            <div>
+                <img src="img/combo.png" alt="img-combo">
+                <h3> <span id="nCombos">0</span>x</h3>
+            </div>
+        </div>
+
+        <canvas id="mainCanvas"></canvas>
+        <div id="trees"></div>
+        <div id="ground">
+
+        </div>
+
+    </div>
+
+    <!--SCRIPTS-->
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/sprite.js"></script>
+    <script src="js/collision.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
