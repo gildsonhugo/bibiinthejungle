@@ -384,8 +384,8 @@ class Game {
     startListeners() {
 
         document.addEventListener('keydown', e => {
+                console.log(e.which);
             if(this.STATE === this.PLAYING){
-                // console.log(e.which);
                 switch (e.which) {
                     case 39:
                         this.foward = true;
@@ -395,7 +395,7 @@ class Game {
                         // this.moveArena();
                         // this.bibi.vx = 5;
                         break;
-                    case 32:
+                    case 38:
                         if (this.bibi.jumpsAllowed) {
                             this.bibi.vy = -25;
                             this.bibi.jump();
@@ -410,7 +410,7 @@ class Game {
                         // this.moveArena();
                         // this.bibi.vx = 5;
                         break;
-                    case 17:
+                    case 32:
                         if (!this.shootDown) {
                             this.shootBibi();
                         }
@@ -431,7 +431,7 @@ class Game {
                 case 37:
                     this.backing = false;
                     break;
-                case 17:
+                case 32:
                     this.shootDown = false;
                     break;
             }
