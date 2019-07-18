@@ -384,7 +384,7 @@ class Game {
     startListeners() {
 
         document.addEventListener('keydown', e => {
-                console.log(e.which);
+                // console.log(e.which);
             if(this.STATE === this.PLAYING){
                 switch (e.which) {
                     case 39:
