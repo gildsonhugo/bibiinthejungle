@@ -158,3 +158,9 @@ class Ground extends Sprite{
         super(...props);
     }
 }
+
+class Flag extends Sprite{
+    constructor(...props) {
+        super(...props);
+    }
+}

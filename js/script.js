@@ -47,7 +47,8 @@ class Game {
         this.bibi.ticksPerFrame = 6;
         this.bibi.gravity = 1;
         this.bibi.loop = false;
-        this.sprites = [this.bibi];
+        this.startFlags();
+        this.sprites = [...this.sprites, this.bibi];
 
         // let startMark = new Sprite(this.img, 180, 0, 16, 17, posX, posY);
         // this.sprites.push(startMark);
@@ -112,6 +113,10 @@ class Game {
         }
 
         this.maxOffset = this.grounds[this.grounds.length - 1].x - ((this.canvas.width / 2) - this.grounds[this.grounds.length - 1].halfWidth());
+
+        let flagEnd = new Flag(this.mainImg, 795, 0, 54, 70, (this.canvas.width / 2) + this.maxOffset, this.canvas.height - 120 - 77);
+        this.sprites.unshift(flagEnd);
+
         this.generateBurger();
     }
 
@@ -171,6 +176,13 @@ class Game {
         if (this.bibi.walking) {
             this.combo.vx = -this.velocity;
         }
+    }
+
+    startFlags(){
+        let posX = (this.canvas.width / 2) - 44.25;
+        let posY = this.canvas.height - 120 - 77;
+        let flagStart = new Flag(this.mainImg, 740, 0, 54, 70, posX, posY);
+        this.sprites.push(flagStart);
     }
 
     shootBibi() {
